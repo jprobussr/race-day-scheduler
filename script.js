@@ -26,3 +26,7 @@ raceForm.addEventListener('submit', (event) => {
 
   result.textContent = message;
 });
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+});
