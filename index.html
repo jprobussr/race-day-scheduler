@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Day Scheduler</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Race Day Scheduler</h1>
+      <p>Find you race time and number</p>
+      <button id="themeToggle" aria-pressed>🌙</button>
+    </header>
+
+    <main>
+      <section>
+        <form id="raceForm">
+          <label for="age">Age</label>
+          <input type="number" id="age" required />
+
+          <label>
+            <input type="checkbox" id="registeredEarly" />
+            Registered Early
+          </label>
+
+          <button type="submit">Check Race Time</button>
+        </form>
+
+        <div id="result">
+         
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for JavaScript practice</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
