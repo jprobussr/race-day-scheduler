@@ -24,8 +24,14 @@ raceForm.addEventListener('submit', (event) => {
     message = 'Please see the registration desk.';
   }
 
-  result.textContent = message;
+  result.innerHTML = `
+    <h2>Race Details</h2>
+    <p>${message}</p>
+  `;
+
+  
   raceForm.reset();
+  ageInput.focus();
 });
 
 const updateThemeButton = () => {
