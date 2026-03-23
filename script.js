@@ -25,6 +25,7 @@ raceForm.addEventListener('submit', (event) => {
   }
 
   result.textContent = message;
+  raceForm.reset();
 });
 
 const updateThemeButton = () => {
