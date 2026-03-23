@@ -27,6 +27,19 @@ raceForm.addEventListener('submit', (event) => {
   result.textContent = message;
 });
 
+const updateThemeButton = () => {
+  const isLight = document.body.classList.contains('light');
+
+  if (isLight) {
+    themeToggle.textContent = '🌙';
+    themeToggle.setAttribute('aria-pressed', 'true');
+  } else {
+    themeToggle.textContent = '☀️';
+    themeToggle.setAttribute('aria-pressed', 'false');
+  }
+};
+
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
+  updateThemeButton();
 });
