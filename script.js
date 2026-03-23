@@ -24,5 +24,5 @@ raceForm.addEventListener('submit', (event) => {
     message = 'Please see the registration desk.';
   }
 
-  console.log(message);
+  result.textContent = message;
 });
