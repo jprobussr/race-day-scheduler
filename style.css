@@ -1,0 +1,54 @@
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --border: rgba(148, 163, 184, 0.2);
+
+  --radius: 14px;
+  --container: 40rem;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --border: rgba(15, 23, 42, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, input {
+    font: inherit;
+}
+
+header, main, footer {
+    width: min(100% - 2rem, var(--container));
+    margin-inline: auto;
+}
+
+button {
+    cursor: pointer;
+}
