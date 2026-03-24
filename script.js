@@ -3,6 +3,11 @@ const ageInput = document.getElementById('age');
 const registeredEarlyInput = document.getElementById('registeredEarly');
 const result = document.getElementById('result');
 const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+}
 
 raceForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -15,23 +20,19 @@ raceForm.addEventListener('submit', (event) => {
 
   if (age > 18 && registeredEarly) {
     raceNumber += 1000;
-    message = `You will race at 9:30 am. Your number is ${raceNumber}.`;
+    message = `Your race starts at 9:30 AM. Your race number is ${raceNumber}.`;
   } else if (age > 18 && !registeredEarly) {
-    message = `You will race at 11:00 am. Your numbers is ${raceNumber}.`;
+    message = `You're in the adult group. Your race start time is 11:00 AM. Your race number is ${raceNumber}. `;
   } else if (age < 18) {
-    message = `You will race at 12:30 pm. Your number is ${raceNumber}.`;
+    message = `You're in the youth group. Your race starts at 12:30 PM. Your race number is ${raceNumber}.`;
   } else {
-    message = 'Please see the registration desk.';
+    message = `You're exactly 18-please check in at the registration desk for your race time. `;
   }
 
   result.innerHTML = `
     <h2>Race Details</h2>
     <p>${message}</p>
   `;
-
-  
-  raceForm.reset();
-  ageInput.focus();
 });
 
 const updateThemeButton = () => {
@@ -48,5 +49,16 @@ const updateThemeButton = () => {
 
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
+
+  const isLight = document.body.classList.contains('light');
+
+  if (isLight) {
+    localStorage.setItem('theme', 'light');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+
   updateThemeButton();
 });
+
+updateThemeButton();
